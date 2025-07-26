@@ -97,6 +97,14 @@ btnHold.addEventListener('click', function () {
 
     // 2. Check if player's score is >= 100
     if (scores[activePlayer] >= 100) {
+      //play winner sound
+      const winnerSound = new Audio('winner.mp3');
+      winnerSound.play();
+
+     document.getElementById(`winner--${activePlayer}`).textContent = '🎉 Winner!';
+     document.getElementById(`winner--${activePlayer}`).classList.remove('hidden');
+
+
       // Finish the game
       playing = false; // stop the game aftr one of the player is win
       diceEl.classList.add('hidden'); // hide the dice
